@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
   height: 100vh;
   max-width: 223px;
   min-width: 80px;
+  position: fixed;
   background: transparent
     linear-gradient(345deg, ${colors.gradient1}, ${colors.gradient2}) 0% 0%;
   border-radius: 0px 47px 0px 0px;

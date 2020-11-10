@@ -5,4 +5,5 @@ export const colors = {
   darkGrey: "#262758",
   gradient1: "#262758",
   gradient2: "#4042b1",
+  textgrey: '#858585'
 };
