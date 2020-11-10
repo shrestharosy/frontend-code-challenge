@@ -44,4 +44,5 @@ export const CardDescription = styled.div`
   color: ${colors.textgrey};
   font-size: 10px;
   font-weight: 500;
+  line-height: 12px;
 `;

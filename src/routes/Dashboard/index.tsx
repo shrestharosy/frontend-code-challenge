@@ -1,7 +1,16 @@
 import React from "react";
 
-import { DashboardWrapper, DashboardHeader, DashboardCards } from "./styles";
+import {
+  DashboardWrapper,
+  DashboardHeader,
+  DashboardCards,
+  DashboardRecommendations,
+  DashboardRecommendationHeading,
+} from "./styles";
 import Card from "components/Card";
+import Recommendation from "components/Recommendation";
+import { SubHeading } from "styles/Typography";
+import { mockRecommendations } from "mock";
 
 const Dashboard = () => {
   return (
@@ -33,6 +42,22 @@ const Dashboard = () => {
           description={"Analyze and plan for your tasks and progress."}
         />
       </DashboardCards>
+      <DashboardRecommendations>
+        <DashboardRecommendationHeading>
+          Recommended Tour Packages
+        </DashboardRecommendationHeading>
+        <SubHeading>
+          These recommendations are based on your profile information.
+        </SubHeading>
+        {mockRecommendations.map(({ title, description, price }, index) => (
+          <Recommendation
+            key={`${title}-${index}`}
+            title={title}
+            description={description}
+            price={price}
+          />
+        ))}
+      </DashboardRecommendations>
     </DashboardWrapper>
   );
 };

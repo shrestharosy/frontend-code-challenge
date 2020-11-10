@@ -37,6 +37,7 @@ export const Header = styled.div`
     font-size: 14px;
     line-height: 17px;
     margin-top: 13px;
+    color: ${colors.white};
   }
 
   a {
@@ -71,6 +72,11 @@ export const ListItem = styled.li`
 
   i {
     margin-right: 8px;
+    color: ${colors.white};
+  }
+
+  span {
+    color: ${colors.white};
   }
 `;
 
@@ -93,11 +99,17 @@ export const FooterHead = styled.div`
   font-weight: bold;
   font-size: 12px;
   padding-bottom: 33px;
+  color: ${colors.white};
+
+  i {
+    color: ${colors.white};
+  }
 `;
 
 export const FooterBody = styled.span`
   font-weight: bold;
   font-size: 14px;
+  color: ${colors.white};
 `;
 
 export const FooterIcons = styled.ul`

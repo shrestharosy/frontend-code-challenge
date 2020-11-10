@@ -1,4 +1,5 @@
 import { css } from "@emotion/core";
+import { colors } from "styles/Colors";
 
 export const GlobalStyle = css`
   @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
@@ -74,6 +75,7 @@ export const GlobalStyle = css`
     outline: none;
     font-family: "Inter", sans-serif;
     font-size: 100%;
+    color: ${colors.primaryText};
     vertical-align: baseline;
   }
   /* HTML5 display-role reset for older browsers */

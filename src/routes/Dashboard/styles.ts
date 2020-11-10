@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { colors } from "styles/Colors";
 
 export const DashboardWrapper = styled.div``;
 
@@ -32,6 +33,23 @@ export const DashboardHeader = styled.div`
 export const DashboardCards = styled.div`
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin: -46px 0px 0px 60px;
   padding: 0px 60px 0px 223px;
+`;
+
+export const DashboardRecommendations = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  aligh-items: center;
+  margin-left: 60px;
+  padding: 0px 60px 0px 223px;
+`;
+
+export const DashboardRecommendationHeading = styled.span`
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 16px;
 `;
