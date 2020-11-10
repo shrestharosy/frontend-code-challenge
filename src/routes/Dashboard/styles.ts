@@ -11,7 +11,7 @@ export const Header = styled.div`
 
   span {
     color: #3d3fa8;
-    margin-left: 3px;
+    margin-left: 5px;
   }
 
   h1 {
