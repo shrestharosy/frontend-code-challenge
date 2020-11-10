@@ -117,4 +117,7 @@ export const GlobalStyle = css`
   button {
     border: none;
   }
+  .m-b-20 {
+    margin-bottom: 20px;
+  }
 `;

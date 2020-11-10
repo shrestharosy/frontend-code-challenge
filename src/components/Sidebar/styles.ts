@@ -58,7 +58,7 @@ export const ListItem = styled.li`
   color: ${colors.white};
   font-weight: bold;
   font-size: 12px;
-  padding: 16px 68px 16px 40px;
+  padding: 16px 0px 16px 40px;
 
   :hover {
     background: rgba(242, 242, 242, 0.1) 0% 0% no-repeat padding-box;
@@ -66,8 +66,10 @@ export const ListItem = styled.li`
     cursor: pointer;
   }
 
-  :nth-child(4) {
-    margin-left: -2px;
+  :nth-of-type(4) {
+    span {
+      margin-left: -2px;
+    }
   }
 
   i {

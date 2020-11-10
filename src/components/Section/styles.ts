@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const Recommendations = styled.div`
+export const SectionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -9,7 +9,7 @@ export const Recommendations = styled.div`
   padding: 0px 60px 0px 223px;
 `;
 
-export const RecommendationHeading = styled.span`
+export const SectionHeading = styled.div`
   font-size: 20px;
   font-weight: bold;
   margin-top: 40px;

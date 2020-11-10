@@ -1,17 +1,17 @@
 import React from "react";
 
-import { Recommendations, RecommendationHeading } from "./styles";
 import Recommendation from "components/Recommendation";
-import { SubHeading } from "styles/Typography";
 import { mockRecommendations } from "mock";
+import Section from "components/Section";
 
 const RecommendedPackages = () => {
   return (
-    <Recommendations>
-      <RecommendationHeading>Recommended Tour Packages</RecommendationHeading>
-      <SubHeading>
-        These recommendations are based on your profile information.
-      </SubHeading>
+    <Section
+      title={"Recommended Tour Packages"}
+      description={
+        "These recommendations are based on your profile information."
+      }
+    >
       {mockRecommendations.map(({ title, description, price }, index) => (
         <Recommendation
           key={`${title}-${index}`}
@@ -20,7 +20,7 @@ const RecommendedPackages = () => {
           price={price}
         />
       ))}
-    </Recommendations>
+    </Section>
   );
 };
 

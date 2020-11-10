@@ -6,7 +6,6 @@ import {
   RecommendationIcon,
   RecommendationContent,
   RecommendationPrice,
-  RecommendationButton,
   RecommendationDetails,
 } from "./styles";
 import { FC } from "react";
@@ -40,9 +39,7 @@ const Recommendation: FC<IRecommendationProps> = ({
       <div>$ {price}</div>
     </RecommendationPrice>
 
-    <RecommendationButton>
-      <SecondaryButton>ORDER NOW</SecondaryButton>
-    </RecommendationButton>
+    <SecondaryButton>ORDER NOW</SecondaryButton>
   </RecommendationWrapper>
 );
 
