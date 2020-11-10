@@ -1,6 +1,7 @@
 import React from "react";
 
 import * as DashboardStyles from "./styles";
+import { SecondaryButton, GreyButton } from "styles/Button";
 
 const Dashboard = () => {
   return (

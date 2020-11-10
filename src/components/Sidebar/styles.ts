@@ -1,11 +1,14 @@
 import styled from "@emotion/styled";
 
+import { colors } from "styles/Colors";
+
 export const Wrapper = styled.div`
   width: 40%;
   height: 100vh;
   max-width: 223px;
   min-width: 80px;
-  background: transparent linear-gradient(345deg, #262758, #4042b1) 0% 0%;
+  background: transparent
+    linear-gradient(345deg, ${colors.gradient1}, ${colors.gradient2}) 0% 0%;
   border-radius: 0px 47px 0px 0px;
   padding: 50px 0px 23px 0px;
 `;
@@ -16,7 +19,7 @@ export const Header = styled.div`
   flex-direction: column;
   padding: 0px 0px 0px 40px;
   margin-bottom: 45px;
-  color: #ffffff;
+  color: ${colors.white};
 
   div {
     width: 60px;
@@ -39,7 +42,7 @@ export const Header = styled.div`
     font-size: 12px;
     margin-top: 8px;
     line-height: 15px;
-    color: #ffffff;
+    color: ${colors.white};
     text-decoration: underline;
     opacity: 0.8;
   }
@@ -50,7 +53,7 @@ export const ListItem = styled.li`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  color: white;
+  color: ${colors.white};
   font-weight: bold;
   font-size: 12px;
   padding: 16px 68px 16px 40px;
