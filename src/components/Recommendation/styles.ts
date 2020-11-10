@@ -40,6 +40,10 @@ export const RecommendationDetails = styled.div`
 
   span {
     margin-top: 8px;
+    width: 418px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 `;
 
