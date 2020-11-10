@@ -27,7 +27,27 @@ const Sidebar = () => {
         <h4>Jimmy Hendrix</h4>
         <a href="#">View Profile</a>
       </SidebarStyles.Header>
+
       <nav>{renderSidebarMenus()}</nav>
+
+      <SidebarStyles.Footer>
+        <SidebarStyles.FooterHead>
+          My Mentor
+          <i className={`fa fa-long-arrow-right fa-lg`} aria-hidden="true"></i>
+        </SidebarStyles.FooterHead>
+        <SidebarStyles.FooterBody>Jimmy Page</SidebarStyles.FooterBody>
+        <SidebarStyles.FooterIcons>
+          <li>
+            <img src={"assets/svg/ic-call.svg"} alt="call" />
+          </li>
+          <li>
+            <img src={"assets/svg/ic-mail.svg"} alt="mail" />
+          </li>
+          <li>
+            <img src={"assets/svg/ic-chat.svg"} alt="chat" />
+          </li>
+        </SidebarStyles.FooterIcons>
+      </SidebarStyles.Footer>
     </SidebarStyles.Wrapper>
   );
 };

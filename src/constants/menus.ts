@@ -21,7 +21,7 @@ export const menus: Array<IMenu> = [
     icon: "users",
   },
   {
-    title: "Your connections",
+    title: "Your Connections",
     url: "/",
     icon: "connectdevelop",
   },

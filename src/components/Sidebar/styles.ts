@@ -3,11 +3,8 @@ import styled from "@emotion/styled";
 export const Wrapper = styled.div`
   width: 40%;
   height: 100vh;
-  max-width: 250px;
+  max-width: 223px;
   min-width: 80px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   background: transparent linear-gradient(345deg, #262758, #4042b1) 0% 0%;
   border-radius: 0px 47px 0px 0px;
   padding: 50px 0px 23px 0px;
@@ -35,11 +32,12 @@ export const Header = styled.div`
   h4 {
     font-size: 14px;
     line-height: 17px;
-    margin-bottom: 8px;
+    margin-top: 13px;
   }
 
   a {
     font-size: 12px;
+    margin-top: 8px;
     line-height: 15px;
     color: #ffffff;
     text-decoration: underline;
@@ -69,5 +67,47 @@ export const ListItem = styled.li`
 
   i {
     margin-right: 8px;
+  }
+`;
+
+export const Footer = styled.div`
+  width: 176px;
+  height: 156px;
+  position: absolute;
+  bottom: 23px;
+  left: 24px;
+  padding: 18px 24px 25px 24px;
+  background: rgb(68, 70, 190, 0.24) 0% 0% no-repeat padding-box;
+  border-radius: 0px 23px 0px 24px;
+  color: white;
+`;
+
+export const FooterHead = styled.div`
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  padding-bottom: 33px;
+`;
+
+export const FooterBody = styled.span`
+  font-weight: bold;
+  font-size: 14px;
+`;
+
+export const FooterIcons = styled.ul`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  margin-bottom: 25px;
+
+  li {
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    background: rgba(68, 70, 190, 0.7);
   }
 `;
