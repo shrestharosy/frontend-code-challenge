@@ -1,4 +1,4 @@
-export const Menus = [
+export const menus = [
   {
     title: "Dashboard",
     url: "/",
