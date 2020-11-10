@@ -2,20 +2,26 @@
 import { jsx } from "@emotion/core";
 
 import * as SidebarStyles from "./styles";
-import { Menus } from "../../constants/menus";
+import { menus } from "../../constants/menus";
 
 const Sidebar = () => {
   return (
-    <SidebarStyles.Sidebar>
-      Jimmy Hendrix
+    <SidebarStyles.Wrapper>
+      <SidebarStyles.Header>
+        <SidebarStyles.ProfileImage />
+        <span>Jimmy Hendrix</span>
+        <a href="#">View Profile</a>
+      </SidebarStyles.Header>
       <nav>
         <ul>
-          {Menus.map((menu, index) => (
-            <li key={`nav-menu-${index}`}>{menu.title}</li>
+          {menus.map((menu, index) => (
+            <SidebarStyles.ListItem key={`nav-menu-${index}`}>
+              {menu.title}
+            </SidebarStyles.ListItem>
           ))}
         </ul>
       </nav>
-    </SidebarStyles.Sidebar>
+    </SidebarStyles.Wrapper>
   );
 };
 

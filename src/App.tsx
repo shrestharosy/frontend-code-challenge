@@ -3,13 +3,14 @@ import React from "react";
 import * as AppStyles from "./styles";
 import Sidebar from "./components/Sidebar";
 import Main from "./components/Main";
+import Dashboard from "./routes/Dashboard";
 
 function App() {
   return (
     <AppStyles.App>
       <Sidebar />
       <Main>
-        <h1>Ola</h1>
+        <Dashboard /> 
       </Main>
     </AppStyles.App>
   );
