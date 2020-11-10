@@ -4,6 +4,7 @@ import { DashboardWrapper, DashboardHeader } from "./styles";
 
 import GymCards from "./GymCards";
 import RecommendedPackages from "./RecommendedPackages";
+import ReferForm from "./ReferForm";
 
 const Dashboard = () => {
   return (
@@ -18,6 +19,7 @@ const Dashboard = () => {
 
       <GymCards />
       <RecommendedPackages />
+      <ReferForm />
     </DashboardWrapper>
   );
 };
