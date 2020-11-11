@@ -7,10 +7,9 @@ export const CustomInput = styled.input`
   width: 328px;
   border: 1px solid #3c498a;
   border-radius: 4px;
-  opacity: 0.42;
   padding-left: 16px;
   position: relative;
-
+  
   &:focus,
   &:active {
     opacity: 1;
@@ -19,9 +18,10 @@ export const CustomInput = styled.input`
     ::placeholder{
       color: ${colors.primaryColor};
       font-size: 10px;
-      position: absolute;
-      top: 8px;
-      bottom:29px;
+      transition: all 0.3s ease-in-out;
+      transform: translateY(-12px);
+
+      
     }
   }
 
@@ -30,6 +30,7 @@ export const CustomInput = styled.input`
     font-size: 14px;
     font-weight: ${fontWeights.medium}
     color: ${colors.textgrey};
+    transition: all 0.3s ease-in-out;
+
   }
 `;
-
