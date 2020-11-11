@@ -1,11 +1,12 @@
 import styled from "@emotion/styled";
-import { sm, lg } from "constants/index";
+import { lg } from "constants/index";
 import { mq, breakpoints } from "styles/media-queries";
 
 export const ReferralContainer = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin-bottom: 86px;
 
   .image {
     display: flex;
@@ -18,6 +19,7 @@ export const ReferralContainer = styled.div`
     }
 
     ${mq(lg)} {
+      height: 277px;
       width: 308px;
     }
 
