@@ -7,6 +7,7 @@ import {
   CardBody,
   CardTitle,
   CardDescription,
+  CardIcon,
 } from "./styles";
 import { FC } from "react";
 
@@ -22,12 +23,12 @@ const Card: FC<ICardProps> = ({ imageUrl, title, description }) => (
       <img src={imageUrl} alt={title} />
     </CardImage>
     <CardBody>
-      <CardTitle>
-        {title}
-        <i className={`fa fa-long-arrow-right fa-lg`} aria-hidden="true"></i>
-      </CardTitle>
+      <CardTitle>{title}</CardTitle>
       <CardDescription>{description}</CardDescription>
     </CardBody>
+    <CardIcon>
+      <i className={`fa fa-long-arrow-right fa-lg`} aria-hidden="true"></i>
+    </CardIcon>
   </CardWrapper>
 );
 

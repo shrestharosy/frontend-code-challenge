@@ -1,4 +1,4 @@
-import { sm } from "constants/index";
+import { lg } from "constants/index";
 import styled from "@emotion/styled";
 
 import { colors } from "styles/Colors";
@@ -6,6 +6,7 @@ import { mq } from "styles/media-queries";
 
 export const CardWrapper = styled.div`
   height: 92px;
+  position: relative;
   display: flex;
   margin: 0 auto;
   width: 100%;
@@ -16,7 +17,7 @@ export const CardWrapper = styled.div`
   background: ${colors.white};
   margin: 10px;
 
-  ${mq(sm)} {
+  ${mq(lg)} {
     width: 328px;
   }
 `;
@@ -53,4 +54,13 @@ export const CardDescription = styled.div`
   font-size: 10px;
   font-weight: 500;
   line-height: 12px;
+`;
+
+export const CardIcon = styled.div`
+  i {
+    font-size: 12px;
+    margin-top: 7px;
+    position: absolute;
+    right: 20px;
+  }
 `;

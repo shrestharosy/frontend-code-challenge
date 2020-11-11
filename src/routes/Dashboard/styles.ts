@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-import { sm } from "constants/index";
+import { sm, lg } from "constants/index";
 import { mq } from "styles/media-queries/index";
 
 export const DashboardWrapper = styled.div``;
@@ -33,6 +33,10 @@ export const DashboardHeader = styled.div`
     font-weight: normal;
 
     ${mq(sm)} {
+      padding-left: 223px;
+    }
+
+    ${mq(lg)} {
       font-size: 36px;
       padding-left: 223px;
     }
