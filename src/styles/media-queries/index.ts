@@ -2,7 +2,7 @@ interface IBreakpoints {
   [key: string]: number;
 }
 
-const breakpoints: IBreakpoints = {
+export const breakpoints: IBreakpoints = {
   small: 600,
   medium: 768,
   large: 1200,

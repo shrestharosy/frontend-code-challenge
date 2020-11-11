@@ -1,15 +1,23 @@
-import { sm } from "constants/index";
 import styled from "@emotion/styled";
-import { mq } from "styles/media-queries";
+import { sm, lg } from "constants/index";
+import { mq, breakpoints } from "styles/media-queries";
 
 export const ReferralContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 
   .image {
-    height: 277px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f4f5f7 0% 0% no-repeat padding-box;
 
-    ${mq(sm)} {
+    @media (max-width: ${breakpoints.large}px) {
+      margin: 0 auto;
+    }
+
+    ${mq(lg)} {
       width: 308px;
     }
 
