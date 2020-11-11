@@ -27,8 +27,12 @@ export const PrimaryButton = styled.button(
   css`
     ${baseButtonStyle}
     width: 192px;
-    background: ${colors.primaryColor} 0% 0% no-repeat padding-box;
+    background: ${colors.darkGrey} 0% 0% no-repeat padding-box;
     color: ${colors.white};
+
+    :hover {
+      background: ${colors.primaryColor};
+    }
   `
 );
 

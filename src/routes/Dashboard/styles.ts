@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-import { sm, lg } from "constants/index";
+import { sm, lg, md } from "constants/index";
 import { mq } from "styles/media-queries/index";
 
 export const DashboardWrapper = styled.div``;
@@ -19,6 +19,16 @@ export const DashboardHeader = styled.div`
     display: block;
     font-size: 36px;
     padding: 50px 58px 86px 60px;
+  }
+
+  .intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    ${mq(md)} {
+      flex-direction: row;
+    }
   }
 
   span {
