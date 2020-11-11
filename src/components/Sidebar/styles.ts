@@ -1,9 +1,11 @@
+import { sm } from "./../../constants/index";
+import { mq } from "./../../styles/media-queries/index";
 import styled from "@emotion/styled";
 
 import { colors } from "styles/Colors";
 
 export const Wrapper = styled.div`
-  width: 40%;
+  width: 223px;
   height: 100vh;
   max-width: 223px;
   min-width: 80px;
@@ -12,6 +14,13 @@ export const Wrapper = styled.div`
     linear-gradient(345deg, ${colors.gradient1}, ${colors.gradient2}) 0% 0%;
   border-radius: 0px 47px 0px 0px;
   padding: 50px 0px 23px 0px;
+  transition: 0.5s;
+  display: none;
+  overflow: hidden;
+
+  ${mq(sm)} {
+    display: block;
+  }
 `;
 
 export const Header = styled.div`

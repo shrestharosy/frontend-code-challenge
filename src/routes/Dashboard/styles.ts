@@ -1,9 +1,14 @@
 import styled from "@emotion/styled";
 
+import { sm } from "constants/index";
+import { mq } from "styles/media-queries/index";
+
 export const DashboardWrapper = styled.div``;
 
 export const DashboardHeader = styled.div`
   height: 256px;
+  max-width: 100%;
+  width: 100%;
   background: rgba(70, 72, 195, 0.06);
   border-radius: 0px 0px 24px 0px;
   padding: 50px 58px 86px 60px;
@@ -19,6 +24,10 @@ export const DashboardHeader = styled.div`
     line-height: 72px;
     font-weight: normal;
     padding-left: 223px;
+
+    ${mq(sm)} {
+      font-size: 24px;
+    }
   }
 
   h3 {
@@ -26,5 +35,9 @@ export const DashboardHeader = styled.div`
     line-height: 54px;
     color: #555555;
     padding-left: 223px;
+
+    ${mq(sm)} {
+      font-size: 20px;
+    }
   }
 `;
