@@ -3,7 +3,7 @@ interface IBreakpoints {
 }
 
 const breakpoints: IBreakpoints = {
-  small: 500,
+  small: 600,
   medium: 768,
   large: 1200,
 };

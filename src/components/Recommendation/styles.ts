@@ -4,7 +4,6 @@ import { colors } from "styles/Colors";
 import { fontWeights } from "styles/Typography";
 
 export const RecommendationWrapper = styled.div`
-  width: 1025px;
   height: 93px;
   display: flex;
   justify-content: space-between;
@@ -14,6 +13,7 @@ export const RecommendationWrapper = styled.div`
   border-radius: 4px;
   padding: 0px 32px 0px 36px;
   margin-bottom: 8px;
+  overflow: hidden;
 `;
 
 export const RecommendationIcon = styled.div`

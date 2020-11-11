@@ -1,6 +1,4 @@
-import { colors } from "styles/Colors";
 import styled from "@emotion/styled";
-import { fontWeights } from "styles/Typography";
 
 export const FormRow = styled.div`
 display: flex;
@@ -13,7 +11,6 @@ input{
 `;
 
 export const FormFooter = styled.div`
-  width: 676px;
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -11,7 +11,15 @@ export const DashboardHeader = styled.div`
   width: 100%;
   background: rgba(70, 72, 195, 0.06);
   border-radius: 0px 0px 24px 0px;
+  display: flex;
+  flex-direction: column;
   padding: 50px 58px 86px 60px;
+
+  ${mq(sm)} {
+    display: block;
+    font-size: 36px;
+    padding: 50px 58px 86px 60px;
+  }
 
   span {
     color: #3d3fa8;
@@ -19,14 +27,14 @@ export const DashboardHeader = styled.div`
   }
 
   h1 {
-    font-size: 36px;
+    font-size: 28px;
     color: #2c2c2c;
     line-height: 72px;
     font-weight: normal;
-    padding-left: 223px;
 
     ${mq(sm)} {
-      font-size: 24px;
+      font-size: 36px;
+      padding-left: 223px;
     }
   }
 
@@ -34,10 +42,10 @@ export const DashboardHeader = styled.div`
     font-size: 24px;
     line-height: 54px;
     color: #555555;
-    padding-left: 223px;
 
     ${mq(sm)} {
-      font-size: 20px;
+      font-size: 24px;
+      padding-left: 223px;
     }
   }
 `;

@@ -1,11 +1,11 @@
 import React from "react";
 
-import { CardsWrapper } from "./styles";
+import { GymCardsContainer } from "./styles";
 import Card from "components/Card";
 
 const GymCards = () => {
   return (
-    <CardsWrapper>
+    <GymCardsContainer>
       <Card
         imageUrl={"assets/images/card1.png"}
         title={"Fill up the form"}
@@ -23,7 +23,7 @@ const GymCards = () => {
         title={"Track your progress"}
         description={"Analyze and plan for your tasks and progress."}
       />
-    </CardsWrapper>
+    </GymCardsContainer>
   );
 };
 

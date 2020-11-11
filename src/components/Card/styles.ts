@@ -1,16 +1,24 @@
+import { sm } from "constants/index";
 import styled from "@emotion/styled";
 
 import { colors } from "styles/Colors";
+import { mq } from "styles/media-queries";
 
 export const CardWrapper = styled.div`
-  width: 328px;
   height: 92px;
   display: flex;
+  margin: 0 auto;
+  width: 100%;
   box-shadow: 0px 5px 10px #a9a9a933;
   border-radius: 4px;
   opacity: 1;
   padding: 15px 20px 16px 24px;
   background: ${colors.white};
+  margin: 10px;
+
+  ${mq(sm)} {
+    width: 328px;
+  }
 `;
 
 export const CardImage = styled.div`
