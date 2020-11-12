@@ -9,6 +9,7 @@ export const CustomInput = styled.input`
   border-radius: 4px;
   padding-left: 16px;
   position: relative;
+  outline: none;
   
   &:focus,
   &:active {

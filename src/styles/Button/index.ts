@@ -16,6 +16,7 @@ export const baseButtonStyle = css`
   font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
+  outline: none;
 
   :hover {
     background: ${colors.primaryColor} 0% 0% no-repeat padding-box;

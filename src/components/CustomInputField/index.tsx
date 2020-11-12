@@ -1,28 +1,35 @@
-import React, { FC } from "react";
-import { useForm } from "react-hook-form";
+import React, { FC, useState } from "react";
 
-import { CustomInput } from "styles/Input";
+import { CustomInput } from "./styles";
+import { UseFormMethods } from "react-hook-form";
 import { IReferFormData } from "routes/Dashboard/ReferForm/Form";
 
-interface ICustomInputFieldProps {
+interface ICustomInputFieldProps extends UseFormMethods<IReferFormData> {
   name: string;
   placeholder: string;
-  errorMessage: string;
-  isRequired?: boolean;
 }
 
 const CustomInputField: FC<ICustomInputFieldProps> = (props) => {
-  const { name, placeholder, isRequired = false, errorMessage } = props;
-  const { register, handleSubmit, errors } = useForm<IReferFormData>();
+  const { name, placeholder, errors, register, ...rest } = props;
+
+  const [text, setText] = useState("");
 
   return (
     <>
-      <CustomInput
-        name={name}
-        placeholder={placeholder}
-        ref={register({ required: isRequired })}
-      />
-      {errorMessage ? <span>{errorMessage}</span> : ""}
+      <CustomInput>
+        <label
+          htmlFor=""
+          className={`custom-field ${text.length > 0 ? "active" : ""}`}
+        >
+          <span className="placeholder">{placeholder}</span>
+          <input
+            type="text"
+            ref={register}
+            {...rest}
+            onChange={(e) => setText(e.currentTarget.value)}
+          />
+        </label>
+      </CustomInput>
     </>
   );
 };

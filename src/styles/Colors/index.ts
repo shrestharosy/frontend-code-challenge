@@ -8,4 +8,5 @@ export const colors = {
   primaryText: "#555555",
   textgrey: "#858585",
   borderColor: "#ECECEC",
+  red: "#F04D46",
 };

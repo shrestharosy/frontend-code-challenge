@@ -2,7 +2,7 @@ import React, { FC } from "react";
 
 import Downshift from "downshift";
 import { Menu, Item, SelectInputWrapper } from "./styles";
-import { CustomInput } from "styles/Input";
+import { CustomInput } from "components/CustomInputField/styles";
 
 interface ICustomSelectProps {
   name: string;
@@ -25,16 +25,21 @@ const CustomSelect: FC<ICustomSelectProps> = (props) => {
         }) => (
           <div>
             <SelectInputWrapper>
-              <CustomInput
-                {...getInputProps({
-                  isOpen,
-                  name,
-                  placeholder,
-                })}
-                style={{ cursor: "pointer" }}
-                readOnly={true}
-                onClick={() => toggleMenu()}
-              />
+              <CustomInput>
+                <label htmlFor="" className={"custom-field active"}>
+                  <span className="placeholder">{placeholder}</span>
+                  <input
+                    readOnly={true}
+                    style={{ cursor: "pointer" }}
+                    onClick={() => toggleMenu()}
+                    {...getInputProps({
+                      isOpen,
+                      name,
+                    })}
+                  />
+                </label>
+                {/* <span className={"text-error"}>Name is required</span> */}
+              </CustomInput>
             </SelectInputWrapper>
 
             {isOpen && (
