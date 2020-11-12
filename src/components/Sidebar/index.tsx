@@ -10,7 +10,7 @@ const Sidebar = () => {
       <ul>
         {menus.map((menu, index) => (
           <SidebarStyles.ListItem key={`nav-menu-${index}`}>
-            {/* <i className={`fa fa-${menu.icon} fa-lg`} aria-hidden="true"></i> */}
+            <i className={`fa fa-${menu.icon} fa-lg`} aria-hidden="true"></i>
             <span>{menu.title}</span>
           </SidebarStyles.ListItem>
         ))}
