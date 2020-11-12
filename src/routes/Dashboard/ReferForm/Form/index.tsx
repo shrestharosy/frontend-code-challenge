@@ -1,11 +1,12 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import Downshift from "downshift";
 
 import { CustomInput } from "../../../../styles/Input";
 import { SecondaryButton } from "styles/Button";
 import { FormRow, FormFooter } from "./styles";
 import CustomSelect from "components/CustomSelect";
+import useModal from "customHooks/useModal";
+import Modal from "components/Modal";
 
 export interface IReferFormData {
   name: string;
@@ -24,10 +25,12 @@ const items = [
 ];
 
 const Form = () => {
-  const { register, handleSubmit, errors } = useForm<IReferFormData>();
+  const { errors,  register, handleSubmit } = useForm<IReferFormData>();
+  const {isOpen, toggle} = useModal();
 
   const onSubmit = handleSubmit(({ name, email }) => {
     console.log(name, email);
+    toggle();
   });
 
   console.log(errors);
@@ -93,6 +96,11 @@ const Form = () => {
         <span>Lorem Ipsum dolor</span>
         <SecondaryButton type={"submit"}>Refer</SecondaryButton>
       </FormFooter>
+      <Modal
+        isOpen={isOpen}
+        onHide={toggle}
+        message={`Success`}
+      />
     </form>
   );
 };

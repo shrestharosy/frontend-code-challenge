@@ -123,7 +123,10 @@ export const GlobalStyle = css`
   .m-b-20 {
     margin-bottom: 20px;
   }
+  .sm-12 {
+    font-size: 14px;
+  }
   .sm-14 {
     font-size: 14px;
   }
-`;
+ `;
