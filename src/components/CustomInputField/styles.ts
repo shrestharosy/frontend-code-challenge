@@ -35,7 +35,7 @@ export const CustomInput = styled.div`
   .placeholder {
     position: absolute;
     left: 12px;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
     color: ${colors.primaryColor};
     transition: all 0.3s ease-in-out;

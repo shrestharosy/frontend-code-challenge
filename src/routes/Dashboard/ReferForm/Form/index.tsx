@@ -1,5 +1,5 @@
-import React from "react";
-import { useForm } from "react-hook-form";
+import React, { useState } from "react";
+import { useForm, Controller } from "react-hook-form";
 
 import { SecondaryButton } from "styles/Button";
 import { FormRow, FormFooter } from "./styles";
@@ -14,72 +14,126 @@ export interface IReferFormData {
   email: string;
   phoneNumber: number;
   address: string;
+  gender: string;
   others: string;
 }
 
-const items = [
-  { value: "apple" },
-  { value: "pear" },
-  { value: "orange" },
-  { value: "grape" },
-  { value: "banana" },
-];
-
 const Form = () => {
-  const { register, ...rest } = useForm<IReferFormData>();
-  const { isOpen, toggle } = useModal();
+  const { control, register, errors, handleSubmit } = useForm<IReferFormData>({
+    mode: "onBlur",
+  });
 
-  const onSubmit = rest.handleSubmit(({ name, email }) => {
-    console.log(name, email);
+  const { isOpen, toggle } = useModal();
+  const [referralName, setReferralName] = useState("");
+
+  const onSubmit = handleSubmit(({ name, email }, e) => {
+    setReferralName(name);
     toggle();
+    e?.target.reset();
   });
 
   return (
     <form onSubmit={onSubmit}>
       <FormRow>
-        <CustomInputField
-          name={"name"}
-          placeholder={"Name"}
-          register={() => register({ required: true })}
-          {...rest}
+        <Controller
+          control={control}
+          register={register}
+          rules={{
+            required: {
+              value: true,
+              message: "Name is required.",
+            },
+          }}
+          name="name"
+          as={
+            <CustomInputField
+              name={"name"}
+              placeholder={"Name"}
+              error={errors.name ? errors.name.message : ""}
+            />
+          }
         />
 
-        <CustomInputField
-          name={"email"}
-          placeholder={"Email"}
-          register={() => register({ required: true })}
-          {...rest}
+        <Controller
+          control={control}
+          register={register}
+          rules={{
+            required: {
+              value: true,
+              message: "Email is required.",
+            },
+          }}
+          name="email"
+          as={
+            <CustomInputField
+              name={"email"}
+              placeholder={"Email"}
+              error={errors.email ? errors.email.message : ""}
+            />
+          }
         />
       </FormRow>
 
       <FormRow>
-        <CustomInputField
-          name={"phoneNumber"}
-          placeholder={"Phone Number"}
-          register={() => register({ required: true })}
-          {...rest}
+        <Controller
+          control={control}
+          register={register}
+          rules={{
+            required: {
+              value: true,
+              message: "Phone number is required.",
+            },
+          }}
+          name="phoneNumber"
+          as={
+            <CustomInputField
+              name={"phoneNumber"}
+              placeholder={"Phone Number"}
+              error={errors.phoneNumber ? errors.phoneNumber.message : ""}
+            />
+          }
         />
 
-        <CustomSelect
-          name={"gender"}
-          placeholder={"Gender"}
-          items={genderOptions}
+        <Controller
+          control={control}
+          register={register}
+          name="gender"
+          as={
+            <CustomSelect
+              name={"gender"}
+              placeholder={"Gender"}
+              items={genderOptions}
+              error={errors.gender ? errors.gender.message : ""}
+            />
+          }
         />
       </FormRow>
 
       <FormRow>
-        <CustomInputField
-          name={"address"}
-          placeholder={"Address"}
-          register={() => register({ required: true })}
-          {...rest}
+        <Controller
+          control={control}
+          register={register}
+          name="address"
+          as={
+            <CustomInputField
+              name={"address"}
+              placeholder={"Address"}
+              error={""}
+            />
+          }
         />
 
-        <CustomInputField
-          name={"others"}
-          placeholder={"Apt/Suite/Other"}
-          register={() => register({ required: true })}
-          {...rest}
+        <Controller
+          control={control}
+          register={register}
+          name="others"
+          as={
+            <CustomInputField
+              name={"others"}
+              placeholder={"Apt/Suite/Other"}
+              error={""}
+            />
+          }
         />
       </FormRow>
 
@@ -87,7 +141,11 @@ const Form = () => {
         <span>Lorem Ipsum dolor</span>
         <SecondaryButton type={"submit"}>Refer</SecondaryButton>
       </FormFooter>
-      <Modal isOpen={isOpen} onHide={toggle} message={`Success`} />
+      <Modal
+        isOpen={isOpen}
+        onHide={toggle}
+        message={`Congrats Jimmy! You will be notified when ${referralName} signs up.`}
+      />
     </form>
   );
 };
