@@ -1,13 +1,13 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-import { CustomInput } from "../../../../styles/Input";
 import { SecondaryButton } from "styles/Button";
-import { FormRow, FormFooter, Blah } from "./styles";
+import { FormRow, FormFooter } from "./styles";
 import CustomSelect from "components/CustomSelect";
 import useModal from "customHooks/useModal";
 import Modal from "components/Modal";
 import CustomInputField from "components/CustomInputField";
+import { genderOptions } from "constants/options";
 
 export interface IReferFormData {
   name: string;
@@ -34,20 +34,8 @@ const Form = () => {
     toggle();
   });
 
-  const itemToString = (i: any) => {
-    return i ? i.name : "";
-  };
-
   return (
     <form onSubmit={onSubmit}>
-      {/* <Blah>
-        <label htmlFor="" className={"custom-field active error"}>
-          <input type="text" ref={register({ required: true })} />
-          <span className="placeholder">Name</span>
-        </label>
-        <span className={"text-error"}>Name is required</span>
-      </Blah> */}
-
       <FormRow>
         <CustomInputField
           name={"name"}
@@ -75,11 +63,7 @@ const Form = () => {
         <CustomSelect
           name={"gender"}
           placeholder={"Gender"}
-          items={[
-            { id: "1", name: "One" },
-            { id: "2", name: "Two" },
-          ]}
-          itemToString={itemToString}
+          items={genderOptions}
         />
       </FormRow>
 
@@ -98,58 +82,6 @@ const Form = () => {
           {...rest}
         />
       </FormRow>
-
-      {/* <FormRow>
-        <CustomInput
-          name="name"
-          placeholder={"Name"}
-          ref={register({ required: true })}
-        />
-        {errors.name && "Name is required."}
-
-        <CustomInput
-          name="email"
-          placeholder={"Email"}
-          ref={register({ required: true })}
-        />
-        {errors.email && "Email is required."}
-      </FormRow> */}
-      {/* 
-
-      <FormRow>
-        <CustomInput
-          name="phoneNumber"
-          placeholder={"Phone Number"}
-          ref={register({ required: true })}
-        />
-        {errors.phoneNumber && "Phone number is required"}
-
-        <CustomSelect
-          name={"gender"}
-          placeholder={"Gender"}
-          items={[
-            { id: "1", name: "One" },
-            { id: "2", name: "Two" },
-          ]}
-          itemToString={itemToString}
-        />
-      </FormRow>
-
-      <FormRow>
-        <CustomInput
-          name="address"
-          placeholder={"Address"}
-          ref={register({ required: true })}
-        />
-        {errors.address && "Address is required"}
-
-        <CustomInput
-          name="others"
-          placeholder={"Apt/Suite/Other"}
-          ref={register({ required: true })}
-        />
-        {errors.others && "Required"}
-      </FormRow> */}
 
       <FormFooter>
         <span>Lorem Ipsum dolor</span>

@@ -28,6 +28,10 @@ export const Item = styled.div`
   background: ${colors.white} 0% 0% no-repeat padding-box;
   border: 1px solid ${colors.borderColor};
   border-radius: 4px 4px 0px 0px;
+
+  span{
+    font-size: 14px;
+  }
 `;
 
 export const Menu = styled.div`
