@@ -129,4 +129,8 @@ export const GlobalStyle = css`
   .sm-14 {
     font-size: 14px;
   }
+  .text-error{
+    font-size: 10px;
+    color: red;
+  }
  `;

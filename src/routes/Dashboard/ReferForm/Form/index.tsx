@@ -7,6 +7,7 @@ import { FormRow, FormFooter } from "./styles";
 import CustomSelect from "components/CustomSelect";
 import useModal from "customHooks/useModal";
 import Modal from "components/Modal";
+import { genderOptions } from "constants/options";
 
 export interface IReferFormData {
   name: string;
@@ -33,12 +34,6 @@ const Form = () => {
     toggle();
   });
 
-  console.log(errors);
-
-  const itemToString = (i: any) => {
-    return i ? i.name : "";
-  };
-
   return (
     <form onSubmit={onSubmit}>
       <FormRow>
@@ -47,7 +42,11 @@ const Form = () => {
           placeholder={"Name"}
           ref={register({ required: true })}
         />
-        {errors.name && "Name is required."}
+        {errors.name && 
+        <span className={'text-error'}>
+          Name is required
+        </span>
+        }
 
         <CustomInput
           name="email"
@@ -68,11 +67,7 @@ const Form = () => {
         <CustomSelect
           name={"gender"}
           placeholder={"Gender"}
-          items={[
-            { id: "1", name: "One" },
-            { id: "2", name: "Two" },
-          ]}
-          itemToString={itemToString}
+          items={genderOptions}
         />
       </FormRow>
 

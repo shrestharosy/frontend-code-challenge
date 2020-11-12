@@ -3,19 +3,24 @@ import React, { FC } from "react";
 import Downshift from "downshift";
 import { Menu, Item, SelectInputWrapper } from "./styles";
 import { CustomInput } from "styles/Input";
+import { IDropdownOption } from "constants/options";
 
 interface ICustomSelectProps {
   name: string;
   placeholder: string;
-  items: Array<{ name: string; id: string }>;
-  itemToString: any;
+  items: Array<IDropdownOption>;
 }
 
 const CustomSelect: FC<ICustomSelectProps> = (props) => {
-  const { name, placeholder, items, itemToString } = props;
+  const { name, placeholder, items } = props;
+
+  const mapOptionToName = (option: IDropdownOption | null) => {
+    return option ? option.name : "";
+  };
+
   return (
     <div>
-      <Downshift itemToString={itemToString}>
+      <Downshift itemToString={mapOptionToName}>
         {({
           getInputProps,
           getItemProps,
@@ -48,7 +53,9 @@ const CustomSelect: FC<ICustomSelectProps> = (props) => {
                       isSelected: selectedItem === item,
                     })}
                   >
-                    {itemToString(item)}
+                    <span>
+                    {item.name}
+                    </span>
                   </Item>
                 ))}
               </Menu>
