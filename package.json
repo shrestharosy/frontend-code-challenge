@@ -5,6 +5,7 @@
     "name": "Rosy Shrestha",
     "email": "rosyshrestha028@gmail.com"
   },
+  "homepage": "https://shrestharosy.github.io/frontend-code-challenge",
   "private": true,
   "dependencies": {
     "@emotion/core": "^10.1.1",
