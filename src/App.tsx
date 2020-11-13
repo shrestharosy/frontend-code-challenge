@@ -4,15 +4,18 @@ import { Global } from "@emotion/core";
 import * as AppStyles from "./styles";
 import { GlobalStyle } from "styles/Global";
 import Sidebar from "./components/Sidebar";
-import Dashboard from "./routes/Dashboard";
+import MainRouters from "routers";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
     <>
       <Global styles={GlobalStyle} />
       <AppStyles.App>
-        <Sidebar />
-        <Dashboard />
+        <BrowserRouter>
+          <Sidebar />
+          <MainRouters />
+        </BrowserRouter>
       </AppStyles.App>
     </>
   );

@@ -4,18 +4,34 @@ import { jsx } from "@emotion/core";
 
 import * as SidebarStyles from "./styles";
 import { menus } from "../../constants/menus";
+import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = () => {
+  const { pathname } = useLocation();
+
+  const checkIfActiveMenu = (currentURL: string) => {
+    if (currentURL === pathname) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   const renderSidebarMenus = () => {
     return (
-      <ul>
+      <SidebarStyles.List>
         {menus.map((menu, index) => (
-          <SidebarStyles.ListItem key={`nav-menu-${index}`}>
-            <i className={`fa fa-${menu.icon} fa-lg`} aria-hidden="true"></i>
-            <span>{menu.title}</span>
-          </SidebarStyles.ListItem>
+          <Link to={menu.url}>
+            <SidebarStyles.ListItem
+              key={`nav-menu-${index}`}
+              className={`${checkIfActiveMenu(menu.url) ? "active" : ""}`}
+            >
+              <i className={`fa fa-${menu.icon} fa-lg`} aria-hidden="true"></i>
+              <span>{menu.title}</span>
+            </SidebarStyles.ListItem>
+          </Link>
         ))}
-      </ul>
+      </SidebarStyles.List>
     );
   };
 

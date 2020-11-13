@@ -1,3 +1,4 @@
+import { routeUrls } from "routeUrls";
 interface IMenu {
   title: string;
   url: string;
@@ -7,27 +8,27 @@ interface IMenu {
 export const menus: Array<IMenu> = [
   {
     title: "Dashboard",
-    url: "/",
+    url: routeUrls.dashboard,
     icon: "th-large",
   },
   {
     title: "Tasks",
-    url: "/",
+    url: routeUrls.tasks,
     icon: "tasks",
   },
   {
     title: "Gym Clubs",
-    url: "/",
+    url: routeUrls.gymClubs,
     icon: "users",
   },
   {
     title: "Your Connections",
-    url: "/",
+    url: routeUrls.connections,
     icon: "connectdevelop",
   },
   {
     title: "Settings",
-    url: "/",
+    url: routeUrls.settings,
     icon: "cog",
   },
 ];

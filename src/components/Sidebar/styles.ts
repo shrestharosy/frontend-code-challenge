@@ -59,6 +59,13 @@ export const Header = styled.div`
   }
 `;
 
+export const List = styled.ul`
+  .active {
+    background: rgba(242, 242, 242, 0.1) 0% 0% no-repeat padding-box;
+    border-radius: 0px 23px 0px 24px;
+  }
+`;
+
 export const ListItem = styled.li`
   height: 47px;
   display: flex;
@@ -68,17 +75,17 @@ export const ListItem = styled.li`
   font-weight: bold;
   font-size: 12px;
   padding: 16px 0px 16px 40px;
-
-  :hover {
-    background: rgba(242, 242, 242, 0.1) 0% 0% no-repeat padding-box;
-    border-radius: 0px 23px 0px 24px;
-    cursor: pointer;
-  }
+  cursor: pointer;
 
   :nth-of-type(4) {
     span {
       margin-left: -2px;
     }
+  }
+
+  :hover {
+    background: rgba(242, 242, 242, 0.1) 0% 0% no-repeat padding-box;
+    border-radius: 0px 23px 0px 24px;
   }
 
   i {
